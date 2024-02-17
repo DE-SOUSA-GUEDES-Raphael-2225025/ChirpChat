@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+/* -----------ANIMATIONS---------- */
+
+@keyframes backgroundShapeAppear {
+    0%{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.05;
+    }
+    100%{
+        transform: translateY(10%);
+        opacity: 0.15;
+    }
+}
+
+@keyframes iconAppearAnimation {
+    0%{
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(10%);
+        opacity: 1;
+    }
+}
+
+@keyframes notificationAppear {
+    0%{
+        top: -100px;
+        opacity: 1;
+    }
+    20%{
+        top: 100px;
+    }
+    60%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes searchBarAppear {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        width: 70vw;
+        opacity: 1;
+    }
+}
+
+/* ----------CSS Général----------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none
+}
+
+a {
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    padding-top: 75px;
+    overflow-x: hidden;
+}
+
+.link{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.black{
+    color: #191919;
+    font-family: League Spartan, serif;
+}
+#pageContent {
+    background-color: #F0F0F0;
+    min-width: 100vw;
+    position: relative;
+    min-height: 88vh;
+    overflow-x: hidden;
+}
+
+/* ------ Error Message ------ */
+
+.errorMessage {
+    display: flex;
+    width: 30vw;
+    height: 10vh;
+    background-color: #fd4f4f;
+    justify-content: center;
+    padding: 0 2vw;
+    align-items: center;
+    margin: 5vh auto;
+    border-radius: 8px;
+}
+
+.errorMessage h2 {
+    font-size: 1.05em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'League Spartan';
+    justify-self: flex-start;
+}
+
+/* ------ Recovery ------ */
+
+#recoveryChamps { /* Champs à remplir */
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 3px 3px 2px rgba(104, 135, 212, 0.25);
+    width: 27.5%;
+    height: 5vh;
+    padding-left: 2%;
+    background: rgba(221, 221, 221, 0.33);
+    font-family: 'League Spartan', serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1.6px;
+    margin: auto;
+    display: block;
+  }
+
+#recoveryChamps input:focus {
+    border-color: transparent;
+    border-bottom: 4px solid #758cc9;
+    box-shadow: none;
+    transition: border-bottom-color 0.3s;
+}
+
+#submitRecovery { /* Bouton pour envoyer */
+    background-color: #6887D4;
+    border: none;
+    width: 55vw;
+    max-width: 500px;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    font-family: 'League Spartan', serif;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    font-size: 1.7em;
+    cursor: pointer;
+    display:block;
+    text-align:center;
+    margin:auto;
+}
+
+#submitRecovery:hover{ /* Changement de couleur du bouton pour envoyer quand on passe le curseur dessus */
+    background-color: #5653b4;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.backgroundShapes{
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    position: absolute;
+    opacity: 0.15;
+    filter: blur(12px);
+    pointer-events: none;
+    animation: backgroundShapeAppear ease 2s forwards;
+}
+
+@media screen and (max-width: 1000px){
+    .backgroundShapes{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #loginForm h2{
+        font-size: 48px;
+        width: 300px;
+    }
+    #submitRecovery{
+        width: 315px;
+        height: 50px;
+    }
+    #recoveryChamps{
+        width: 300px;
+        height: 50px;
+    }
+}
+
+/* ------ Home Page ------ */
+#categories{ /* Zone des recommandations des catégories */
+    height: fit-content;
+    background: white;
+    align-self: flex-start;
+    font-family: 'League Spartan';
+    border-radius: 10px;
+}
+
+#bestPost{ /* */
+    background: white;
+    align-self: flex-start;
+    font-family: 'League Spartan';
+    border-radius: 10px;
+}
+
+#titreBestPost{
+    font-family: 'League Spartan';
+    font-weight: 500;
+    font-size: 2em;
+    text-align:center;
+}
+
+.inputField{
+    width: 400px;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(221, 221, 221, 0.33);
+    box-shadow: 0px 4px 4px 3px rgba(104, 135, 212, 0.25);
+    padding-left: 15px;
+    font-family: Heebo, serif;
+    font-size: 1.1em;
+    transition: all 0.1s ease;
+}
+
+.inputField:focus{
+    outline: none;
+    border-bottom: solid rgba(7, 90, 193,0.6) 4px;
+}
+
+
+.authButtons { /* Bouton pour envoyer */
+    background: linear-gradient(#72a6d7, #325a90);    width: 415px;
+    background-size: 1px 600px;
+    border: none;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    font-family: 'League Spartan', serif;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    font-size: 1.4em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    transition: background 0.2s ease-in;
+}
+
+.profile-picture{
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.notification{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+    left: calc(50vw - 150px);
+    opacity: 1;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 90vw;
+    height: fit-content;
+    padding: 15px 15px;
+    font-family: 'League Spartan', serif;
+    font-size: 1.8em;
+    animation: notificationAppear 3s forwards;
+    color: #ffffff;
+}
+
+.error{
+    background-color: #ff3030;
+}
+
+.success{
+    background-color: #07dc00;
+}
+
+.info{
+    background-color: #ffd342;
+}
+
+
+@media screen and (max-width: 1000px){
+    .backgroundShapes{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    form h2{
+        font-size: 55px;
+        width: 70%;
+    }
+
+    #passwordRecupForm h2{
+        font-size: 33px;
+    }
+
+    .authButtons{
+        width: 315px;
+        height: 50px;
+    }
+
+    .inputField{
+        width: 300px;
+        height: 50px;
+    }
+}

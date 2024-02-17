@@ -1,0 +1,258 @@
+#private-message-container{
+    display: flex;
+    width: 95vw;
+    height: 90%;
+}
+
+#privateMessageList {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    gap: 20px;
+    width: 90%;
+    height: 40vh;
+    margin-top: 20px;
+    padding: 5% 0;
+    border: solid #9b9b9b;
+}
+
+#privateMessagesContainer{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    height: 75vh;
+    padding-top: 10px;
+    overflow-y: scroll;
+    width: 60vw;
+    scroll-behavior: smooth;
+    background-color: white;
+    margin-top: 50px;
+}
+
+#privateMessagesContainer::-webkit-scrollbar{
+    display: none;
+}
+
+#privateMessageList .privateMessage{
+    color: #f1f1f1;
+    border-radius: 10px;
+    max-width: 80%;
+    padding: 10px 20px;
+}
+
+#privateMessageList .privateMessage p {
+    font-weight: 400;
+    font-family: "League Spartan", serif;
+    font-size: 20px;
+    word-wrap:break-word;
+    color: white;
+}
+
+
+#privateMessageList .privateMessageSent{
+    background-color: #6887D4;
+    align-self: flex-end;
+    margin-right: 3%;
+}
+
+#privateMessageList .privateMessageReceived {
+    background-color: #62626b;
+    align-self: flex-start;
+    margin-left: 3%;
+}
+
+#privateMessageForm{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding: 30px 0px;
+}
+
+#privateMessageForm input[type=text]{
+    width: 77%;
+    padding-left: 3%;
+    height: 4vh;
+    background-color: #F0F0F0;
+    border: none;
+    color: #3a3a3a;
+    border-radius: 10px 0 0 10px;
+    font-size: 1.2em;
+    font-family: Heebo, serif;
+}
+
+#privateMessageForm input[type=submit]{
+    height: 4vh;
+    border: none;
+    background-color: #6887D4;
+    color: white;
+    font-size: 1.3em;
+    font-family: "League Spartan", serif;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+    width: 20%;
+}
+
+@media screen and (max-width: 800px){
+
+    #privateMessageList{
+        width: 90%;
+    }
+
+    #privateMessageForm{
+        width: 80%;
+    }
+
+    #privateMessageForm input[type=submit]{
+        font-size: 1em;
+        font-family: "League Spartan", serif;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 0 10px 10px 0;
+        width: 20%;
+    }
+
+
+}
+
+#retour{
+    cursor: pointer;
+    right: 50px;
+    bottom: 10px;
+    color: #FFFFFF;
+    font-family: 'League Spartan', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    border-radius: 10px;
+    background: #6887D4;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+
+#all-users-container{
+    width: 450px;
+    height: 75vh;
+    margin: 50px 0 0 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: scroll;
+}
+.user-container{
+    display: grid;
+    position: relative;
+    grid-template-areas:
+            "profile-picture username"
+            "profile-picture last-message";
+    grid-template-columns: min-content min-content;
+    gap: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.user-container img{
+    grid-area: profile-picture;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+.user-container h3{
+    padding-top: 5px;
+    font-family: 'League Spartan', serif;
+    grid-area: username;
+    font-size: 1.8em;
+    text-align: left;
+}
+
+#privateMessagesContainer header{
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#privateMessagesContainer header h2{
+    font-family: "League Spartan", serif;
+    font-size: 1.8em;
+}
+
+#privateMessagesContainer header p {
+    font-family: "League Spartan", serif;
+}
+#privateMessagesContainer img{
+    width: 75px;
+    height: 75px;
+    padding-bottom: 5px;
+}
+
+#toggle-user-btn{
+    display: none;
+}
+
+@media screen and (max-width: 1000px){
+
+    #pageContent{
+        overflow: auto !important;
+    }
+
+    .close{
+        left: -100vw;
+    }
+
+    .open{
+        left: 0;
+    }
+
+    #all-users-container{
+        overflow: scroll;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding-top: 60px;
+        align-items: flex-start;
+        transition: all 0.5s ease;
+    }
+
+    #privateMessagesContainer{
+        width: 100vw;
+        margin: 0;
+    }
+
+    #private-message-container{
+        justify-content: center;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    #privateMessageForm{
+        width: 90%;
+    }
+
+    #toggle-user-btn{
+        display: block;
+        position: absolute;
+        top: 5vh;
+        left: 6vw;
+        width: 40px;
+        border: none;
+        background: none;
+    }
+}
+
+
+
+
+
+
+

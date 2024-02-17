@@ -1,0 +1,306 @@
+/* ------ Home Page ------ */
+#categories{ /* Zone des recommandations des catégories */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 325px;
+    height: 120vh;
+    background: white;
+    align-self: flex-start;
+    font-family: 'League Spartan';
+    border-radius: 10px;
+}
+
+#pageContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bestPost{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    padding-bottom: 15px;
+    background: white;
+    align-self: flex-start;
+    font-family: 'League Spartan';
+    border-radius: 10px;
+}
+
+#liensCategories { /* Liens cliquables */
+    font-family: 'League Spartan';
+    display: block;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: 1.8px;
+    padding-top: 40px;
+    background:url(https://www.publicdomainpictures.net/pictures/70000/nahled/animal-13901479985Nv.jpg) no-repeat;
+    width:20vw;
+    height:115px;
+    border-radius: 10px;
+}
+
+#titreCategorie{
+    font-family: 'League Spartan';
+    font-weight: 500;
+    font-size: 2em;
+    text-align:left;
+}
+
+#voirPlus{
+    font-family: 'League Spartan';
+    display: block;
+    text-align: center;
+    color: #758cc9;
+    font-weight: 500;
+    font-size: 2em;
+    letter-spacing: 1.8px;
+    padding-top: 40px;
+}
+
+#slider{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    height: fit-content;
+    overflow-x: scroll;
+}
+
+
+
+#catContainer{
+    display: flex;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+#more-category{
+    background: linear-gradient(#151515, #151414);
+    justify-content: space-around;
+}
+
+#more-category p{
+    width: 50%;
+    padding-right: 10%;
+}
+
+#more-category svg {
+    padding-left: 10%;
+}
+
+
+#more-category p:after{
+    display: none;
+}
+
+.sectionTitle{
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    padding-top: 30px;
+    font-size: 2.8em;
+    font-weight: 900;
+    padding-bottom: 20px;
+    font-family: "League Spartan", serif;
+}
+
+#categories .cat-container,
+#more-category{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'League Spartan', serif;
+    overflow: hidden;
+    position: relative;
+}
+
+#categories h4{
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+#categories p{
+    font-size: 1.8em;
+    margin-top: 2px;
+    margin-left: 25px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#categories p:after{
+    content: " ";
+    position: absolute;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 100%;
+    width: 60%;
+    height: 200%;
+    left: 55%;
+    top: -25%;
+}
+#categories svg:not(#more-category svg) {
+    position: absolute;
+}
+#categories svg{
+    width: 30%;
+    height: auto;
+    color: rgba(255,255,255,0.25);
+    left: 0;
+}
+
+#see-more-button{
+    width: 100%;
+    height: 50px;
+    justify-self: center;
+}
+
+
+#best-post-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bestPost{
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "photo-profil pseudo likes"
+        "photo-profil titre titre";
+    font-family: 'League Spartan', serif;
+    padding: 0 10px;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.bestPost img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    grid-area: photo-profil;
+    border-radius: 100%;
+}
+
+.bestPost h4{
+    grid-area: pseudo;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.bestPost > p{
+    grid-area: titre;
+    font-size: 0.9em;
+    overflow: hidden;
+}
+
+.bestPost .likes{
+    grid-area: likes;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.6em;
+}
+
+.bestPost .likes svg{
+    width: 30px;
+    height: 30px;
+    color: #ff3030;
+}
+
+div[role=combobox]{
+    color: black;
+    font-family: League Spartan, serif;
+}
+
+
+
+@media screen and (max-width: 1200px){
+
+    body{
+        overflow: scroll;
+    }
+
+    #catContainer #bestPost{
+        display: none;
+    }
+
+    #catContainer{
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    #catContainer #categories{
+        width: 100vw;
+        margin-left: 30px;
+        height: fit-content;
+        background: none;
+        overflow-x: scroll;
+        align-items: flex-start;
+    }
+
+    ::-webkit-scrollbar{
+        width: 0;
+        background: transparent;
+    }
+
+    #catContainer #categories #slider{
+        flex-direction: row;
+        width: fit-content;
+        overflow-x: auto;
+        align-items: flex-start;
+        align-self: flex-start;
+        padding-right: 60px;
+    }
+
+    #catContainer #categories #slider .cat-container,
+    #more-category{
+        width: 170px;
+        height: 45px;
+    }
+
+    #catContainer #categories h3{
+        font-size: 1.5em;
+    }
+
+    #categories > h3,
+    #categories p,
+    #categories svg{
+        display: none;
+    }
+
+    #see-more-button{
+        margin-bottom: 10vh;
+    }
+
+    #more-category{
+        display: flex;
+        justify-content: center;
+    }
+    #more-category svg{
+        display: flex;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #catContainer #categories a{
+        width: 120px;
+        height: 45px;
+    }
+
+    #catContainer #categories h3{
+        font-size: 1.4em;
+    }
+}

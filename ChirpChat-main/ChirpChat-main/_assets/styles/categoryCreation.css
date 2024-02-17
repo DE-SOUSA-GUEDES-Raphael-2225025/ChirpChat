@@ -1,0 +1,54 @@
+#pageContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#creation-category-form{
+    width: fit-content;
+    min-height: 100vh;
+    gap: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#creation-category-form h2{
+    font-family: 'League Spartan', serif;
+    font-size: 2.2em;
+    padding: 100px 0 10px 0;
+}
+
+.red{
+    color: #ff3030;
+}
+
+#creation-category-form p{
+    font-family: 'League Spartan', serif;
+    font-weight: bold;
+    font-size: 2.3em;
+    padding-bottom: 50px;
+}
+
+#creation-category-form label{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-family: "League Spartan", serif;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+#creation-category-form textarea{
+    padding-top: 5px;
+    height: 300px;
+    font-size: 0.8em;
+}
+
+#color-label input[type=color]{
+    flex-direction: row !important;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 30px;
+}

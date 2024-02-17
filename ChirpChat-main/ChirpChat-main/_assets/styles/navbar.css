@@ -1,0 +1,326 @@
+/* ----------NAVBAR---------- */
+
+nav #topNavBar{
+    position: fixed;
+    z-index: 1;
+    background: white;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 75px;
+}
+
+nav #topNavBar ul {
+    max-width: 350px;
+}
+
+nav #topNavBar input[type=text]{
+    width: calc(30vw - 100px);
+    padding-left: 5px;
+    height: 100%;
+    border: none;
+    font-family: 'League Spartan', serif;
+    font-size: 1.3em;
+    background-color: #F0F0F0;
+    outline: none;
+}
+
+
+/* -----------BARRE DE RECHERCHE----------*/
+
+nav #topNavBar form{
+    display: flex;
+    align-items: center;
+    width: 30vw;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: #F0F0F0;
+}
+
+nav #topNavBar button{
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: none;
+    margin-left: 10px;
+}
+
+#searchBar{
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+    width: 100vw;
+    background: white;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#searchBar input{
+    width: 70vw;
+    height: 45%;
+    animation: searchBarAppear 0.5s ease forwards;
+    border: solid #bababa 2px;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: 'League Spartan', serif;
+    font-size: 1.4em;
+}
+#searchBar svg{
+    width: 30px;
+    height: 30px
+}
+
+#searchBar button{
+    border: none;
+    background: none;
+}
+
+
+/* ---------LOGO CHIRPCHAT---------- */
+
+nav #topNavBar #logoDiv{
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    gap: 20px;
+}
+
+nav #topNavBar #logoDiv h1{
+    font-family: 'League Spartan', serif;
+    font-weight: 700;
+    font-size: 2.1em;
+    padding-bottom: 5px;
+}
+
+nav #logo{
+    width: auto;
+    height: 45px;
+}
+
+
+/* ----------NAVBAR MOBILE----------*/
+
+nav #desktopViewBottomBar h1{
+    color: #3D3D3D;
+    font-family: 'League Spartan', serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin-right: 5vw;
+}
+
+nav #mobileViewBottomBar{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    height: 80px;
+    z-index: 1;
+    border-radius: 10px 10px 0 0;
+}
+
+nav #mobileViewBottomBar .scrolledProfile{
+    position: absolute;
+    right: -0px;
+    top: -100px;
+    z-index: 2;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+nav #topNavBar ul li:nth-child(3){
+    display: none;
+}
+
+nav ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    width: 20%;
+    animation: iconAppearAnimation 0.5s forwards ease;
+}
+
+nav ul a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li:nth-child(2){
+    margin-right: 10px;
+}
+
+nav ul li:nth-child(3){
+    margin-left: 10px;
+}
+
+nav ul li:nth-child(1){animation-delay: 0.15s}
+nav ul li:nth-child(2){animation-delay: 0.30s}
+nav ul li:nth-child(3){animation-delay: 0.45s}
+nav ul li:nth-child(4){animation-delay: 0.60s}
+
+
+nav ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li svg{
+    width: 35px;
+    height: 30px;
+}
+
+nav ul li p{
+    font-family: 'League Spartan', serif;
+    font-size: 0.9em;
+}
+
+nav #topNavBar ul li{
+    position: relative;
+    margin: 0;
+    height: fit-content;
+}
+
+ul li:not(.scrolledProfile ul li):hover > svg,
+ul li:not(.scrolledProfile ul li):hover > p{
+
+    color: #5A88FF;
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+
+#addPostButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #F0F0F0;
+    position: fixed;
+    border-radius: 100%;
+    bottom: 50px;
+    left: calc(50% - 30px);
+}
+
+#addPostButtonContainer svg{
+    width: 40px;
+    height: 40px;
+    background-color: #5A88FF;
+    border-radius: 100%;
+    color: white;
+}
+
+
+/* ----------MENU DEROULANT PROFIL ---------- */
+.scrolledProfile{
+    width: 70%;
+    right: 0;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.1);
+    border-top: 0;
+    position: absolute;
+    top: 95px;
+    z-index: 1;
+}
+
+.menuOpen{
+    transition: transform 0.2s ease-in, opacity 0.3s ease-in;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menuClose{
+    transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+    opacity: 0;
+    transform: translateY(-30%);
+    pointer-events: none;
+}
+
+.scrolledProfile{
+    width: 200px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 10px 10px 10px;
+}
+
+.scrolledProfile ul{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin:0;
+    width: 200px;
+}
+
+.scrolledProfile li{
+    width: 100%;
+    align-items: flex-start;
+}
+.scrolledProfile ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4em;
+}
+
+.scrolledProfile .logoutMenu:hover > a > svg,
+.scrolledProfile .logoutMenu:hover > a > p{
+    color:red;
+}
+
+.scrolledProfile ul li svg{
+    width: 35px;
+    height: 35px;
+    color: black;
+}
+
+
+/* ----------VERSION MOBILE---------- */
+@media screen and (max-width: 1200px){
+
+    nav #mobileViewBottomBar{
+        display: flex;
+    }
+
+    nav #topNavBar ul{
+        display: none;
+    }
+
+    nav #topNavBar form{
+        display: none;
+    }
+
+    nav #logoDiv img{
+        display: none;
+    }
+
+    nav #logoDiv{
+        justify-content: center;
+    }
+
+    nav #logoDiv{
+        font-size: 1.6em;
+    }
+
+}

@@ -1,0 +1,110 @@
+#pageContent{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#creation-category-button{
+    display: flex;
+    align-self: center;
+    align-content: center;
+    font-family: 'League Spartan', serif;
+    background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);    font-weight: 500;
+    font-size: 1.3em;
+    letter-spacing: 1.8px;
+    padding: 20px 10px;
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#category-list{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: fit-content;
+    grid-template-columns: repeat(auto-fill, 275px);
+    grid-template-rows: repeat(auto-fill, 325px);
+    grid-gap: 20px;
+    margin: 40px 0;
+    padding-bottom: 10vh;
+}
+
+#category-list .category{
+    position: relative;
+    width: 225px;
+    height: 325px;
+    padding: 0 25px;
+    font-family: 'League Spartan', serif;
+    justify-content: center;
+    gap: 20px;
+    color: #eaeaea;
+    transition: all 1s;
+    border-radius: 10px;
+}
+
+.category .category-front,
+.category .category-back{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    gap: 20px;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 25px;
+    top: 25px;
+    transition: opacity 0.25s ease;
+}
+
+.category .category-back{
+    opacity: 0;
+}
+
+
+#category-list .category:hover .category-front{
+    opacity: 0;
+}
+
+#category-list .category:hover .category-back{
+    opacity: 1;
+}
+
+#category-list p{
+    max-height: 100%;
+    overflow: hidden;
+}
+
+#category-list h3{
+    font-size: 2.7em;
+}
+
+#category-list h4{
+    font-size: 2.3em;
+}
+
+.admin-buttons svg{
+    width: 30px;
+    transition: all 0.3s;
+}
+
+.admin-buttons{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: flex-end;
+    gap: 20px;
+    right: 20px;
+    bottom: 10px;
+    z-index: 1;
+}
+
+.admin-buttons a:nth-child(2):hover{
+    color: red;
+}
+
+.admin-buttons a:nth-child(1):hover{
+    color: dodgerblue;
+}
